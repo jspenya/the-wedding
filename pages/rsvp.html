@@ -7,14 +7,10 @@ permalink: /pages/rsvp/
 
 <section>
   <div class="container">
-    <div class="scripture mb-xl">
-      Your presence is the greatest gift of all
-    </div>
-
     <div class="card" style="max-width: 700px; margin: 0 auto;">
       <p class="text-center mb-lg">
-        Please let us know if you'll be able to celebrate with us.
-        Kindly respond by <strong>May 20, 2026</strong>.
+        Please let us know if you'll be able to celebrate with us. <br/>
+        Kindly respond by <strong>{{site.wedding.respond_to_rsvp_by}}</strong>.
       </p>
 
       <form
@@ -67,26 +63,6 @@ permalink: /pages/rsvp/
         </div>
 
         <div class="form-group">
-          <label for="dietary">Dietary Restrictions or Allergies</label>
-          <input
-            type="text"
-            id="dietary"
-            name="dietary"
-            placeholder="e.g., Vegetarian, Gluten-free, Nut allergy"
-            class="form-input">
-        </div>
-
-        <div class="form-group">
-          <label for="songRequest">Special Song Request (Optional)</label>
-          <input
-            type="text"
-            id="songRequest"
-            name="songRequest"
-            placeholder="Song title and artist"
-            class="form-input">
-        </div>
-
-        <div class="form-group">
           <label for="message">Message or Prayer for the Couple</label>
           <textarea
             id="message"
@@ -109,7 +85,7 @@ permalink: /pages/rsvp/
 
     <div class="text-center mt-xl">
       <p class="mb-sm">Questions about RSVPs or your attendance?</p>
-      <a href="mailto:hello@stephen-stephanie.com">Contact us directly</a>
+      <a href="mailto:{{ site.wedding.contact_us_email }}">Contact Us Directly</a>
     </div>
   </div>
 </section>

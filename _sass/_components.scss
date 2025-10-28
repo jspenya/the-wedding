@@ -99,7 +99,7 @@
     &::before {
       transform: rotate(45deg);
       top: 0;
-    }
+  }
 
     &::after {
       transform: rotate(-45deg);
@@ -107,6 +107,8 @@
     }
   }
 }
+
+#main-content { padding-top: 1em; }
 
 // Mobile Menu
 .mobile-menu {
@@ -352,6 +354,9 @@
     }
   }
 
+  .scripture { color: $white; }
+  .reference { color: $white; }
+
   .footer-content {
     display: grid;
     grid-template-columns: 1fr;
@@ -369,6 +374,8 @@
       font-size: $font-size-h5;
       margin-bottom: $spacing-md;
     }
+
+    p { color: $white; }
 
     ul {
       list-style: none;

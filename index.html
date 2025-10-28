@@ -9,14 +9,14 @@ title: Home
 
     <p class="text-uppercase mb-md">are getting married</p>
 
-    <h2 class="mb-lg">{{ site.wedding.date_formatted }}</h2>
+    <h2 class="mb-lg wedding-date">{{ site.wedding.date_formatted }}</h2>
 
     <div class="scripture mb-lg">
       We love because He first loved us
       <span class="reference">— 1 John 4:19</span>
     </div>
 
-    <div class="countdown" id="countdown">
+    <div class="countdown" id="countdown" data-wedding-date="{{ site.wedding.date_formatted }}">
       <div class="countdown-item">
         <span class="countdown-number" id="days">0</span>
         <span class="countdown-label">Days</span>

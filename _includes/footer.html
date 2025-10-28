@@ -9,7 +9,6 @@
       <div class="footer-section">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="{{ '/pages/story' | relative_url }}">Our Story</a></li>
           <li><a href="{{ '/pages/details' | relative_url }}">Wedding Details</a></li>
           <li><a href="{{ '/pages/rsvp' | relative_url }}">RSVP</a></li>
           <li><a href="{{ '/pages/registry' | relative_url }}">Registry</a></li>
@@ -20,7 +19,7 @@
         <h4>Contact</h4>
         <p>For questions or concerns, please contact:</p>
         <p>
-          <a href="mailto:hello@stephen-stephanie.com">hello@stephen-stephanie.com</a>
+          <a href="mailto:{{ site.wedding.contact_us_email }}">{{ site.wedding.contact_us_email }}</a>
         </p>
       </div>
     </div>

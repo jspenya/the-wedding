@@ -5,17 +5,24 @@ An elegant, romantic static wedding website built with Jekyll featuring an olive
 ## Setup
 
 1. Install Ruby (version 2.7 or higher)
-2. Install dependencies:
+
+2. Create your environment file:
+   ```bash
+   cp .env.example .env
+   ```
+   Then edit `.env` with your wedding details
+
+3. Install dependencies:
    ```bash
    bundle install
    ```
 
-3. Run the development server:
+4. Run the development server:
    ```bash
    bundle exec jekyll serve
    ```
 
-4. Visit `http://localhost:4000` in your browser
+5. Visit `http://localhost:4000` in your browser
 
 ## Deployment
 
@@ -27,11 +34,14 @@ This site can be deployed to:
 ## Customization
 
 ### Update Wedding Details
-Edit `_config.yml` to update:
+Edit the `.env` file to update:
 - Couple names
 - Wedding date and time
 - Venue information
 - Map coordinates
+- Contact information
+
+**Important:** Never commit your `.env` file to version control. It's excluded in `.gitignore` to protect your sensitive information.
 
 ### Add Photos
 Place photos in `assets/images/` directory and reference them in the respective pages.

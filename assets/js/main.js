@@ -76,7 +76,7 @@
   const countdown = document.getElementById('countdown');
 
   if (countdown) {
-    const weddingDate = new Date('2026-06-20T14:30:00').getTime();
+    const weddingDate = new Date(countdown.dataset.weddingDate).getTime();
 
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');

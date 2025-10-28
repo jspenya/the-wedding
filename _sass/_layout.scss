@@ -27,12 +27,14 @@ body {
 
 // Section
 section {
-  padding: $spacing-xxl 0;
+  padding: $spacing-xxl 0 $spacing-xl 0;
   position: relative;
 
   @media (max-width: $tablet) {
     padding: $spacing-xl 0;
   }
+
+  &.no-padding { padding: 0; }
 }
 
 .section-title {

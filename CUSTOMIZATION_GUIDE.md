@@ -30,13 +30,6 @@ Place your images in the `assets/images/` folder:
 - `og-image.jpg` - Social media preview image (1200x630px)
 - `favicon.png` - Browser tab icon (32x32px or 64x64px)
 
-**Story Page Images (5 images):**
-- `story-1.jpg` - How you met
-- `story-2.jpg` - First date
-- `story-3.jpg` - Growing together
-- `story-4.jpg` - The proposal
-- `story-5.jpg` - Engagement photo
-
 **Gallery Images (6+ images):**
 - `gallery-1.jpg` through `gallery-6.jpg`
 - Add more by copying the gallery item HTML in `pages/gallery.html`

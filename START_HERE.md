@@ -86,12 +86,6 @@ wedding:
 - https://unsplash.com/s/photos/wedding
 - https://unsplash.com/s/photos/garden
 
-### 3. Update Your Story
-
-**File:** `pages/story.html`
-
-Replace the example story with your actual story. Keep the HTML structure, just change the text and dates.
-
 ### 4. Set Up RSVP Form
 
 **Sign up:** https://formspree.io (free)
