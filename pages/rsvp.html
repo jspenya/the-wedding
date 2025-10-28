@@ -1,0 +1,163 @@
+---
+layout: page
+title: RSVP
+subtitle: We hope you can join us on our special day
+permalink: /pages/rsvp/
+---
+
+<section>
+  <div class="container">
+    <div class="scripture mb-xl">
+      Your presence is the greatest gift of all
+    </div>
+
+    <div class="card" style="max-width: 700px; margin: 0 auto;">
+      <p class="text-center mb-lg">
+        Please let us know if you'll be able to celebrate with us.
+        Kindly respond by <strong>May 20, 2026</strong>.
+      </p>
+
+      <form
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+        id="rsvpForm"
+        class="rsvp-form">
+
+        <div class="form-group">
+          <label for="name">Full Name(s) <span style="color: red;">*</span></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="John & Jane Doe"
+            class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address <span style="color: red;">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="your.email@example.com"
+            class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="attendance">Will you be attending? <span style="color: red;">*</span></label>
+          <select id="attendance" name="attendance" required class="form-input">
+            <option value="">Please select...</option>
+            <option value="yes">Yes, I/We will be there!</option>
+            <option value="no">Regretfully, I/We cannot attend</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="guestCountGroup" style="display: none;">
+          <label for="guestCount">Number of Guests Attending <span style="color: red;">*</span></label>
+          <input
+            type="number"
+            id="guestCount"
+            name="guestCount"
+            min="1"
+            max="10"
+            placeholder="2"
+            class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="dietary">Dietary Restrictions or Allergies</label>
+          <input
+            type="text"
+            id="dietary"
+            name="dietary"
+            placeholder="e.g., Vegetarian, Gluten-free, Nut allergy"
+            class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="songRequest">Special Song Request (Optional)</label>
+          <input
+            type="text"
+            id="songRequest"
+            name="songRequest"
+            placeholder="Song title and artist"
+            class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message or Prayer for the Couple</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Share your well wishes, advice, or a prayer for our marriage..."
+            class="form-input"></textarea>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Send Your RSVP</button>
+        </div>
+      </form>
+
+      <div id="formSuccess" style="display: none;" class="text-center mt-lg">
+        <h3 class="text-olive">Thank You! 🌿</h3>
+        <p>We can't wait to celebrate with you!</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-xl">
+      <p class="mb-sm">Questions about RSVPs or your attendance?</p>
+      <a href="mailto:hello@stephen-stephanie.com">Contact us directly</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #4A5D4A;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  border: 2px solid #C8D4BF;
+  border-radius: 8px;
+  background: #FDFDF8;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #6B7C59;
+  box-shadow: 0 0 0 3px rgba(107, 124, 89, 0.1);
+}
+
+.form-input::placeholder {
+  color: #A4B494;
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 100px;
+}
+
+select.form-input {
+  cursor: pointer;
+}
+</style>
+

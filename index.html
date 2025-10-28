@@ -1,0 +1,80 @@
+---
+layout: home
+title: Home
+---
+
+<section class="hero" id="hero">
+  <div class="hero-content fade-in">
+    <h1 class="couple-names">{{ site.wedding.couple_names }}</h1>
+
+    <p class="text-uppercase mb-md">are getting married</p>
+
+    <h2 class="mb-lg">{{ site.wedding.date_formatted }}</h2>
+
+    <div class="scripture mb-lg">
+      We love because He first loved us
+      <span class="reference">— 1 John 4:19</span>
+    </div>
+
+    <div class="countdown" id="countdown">
+      <div class="countdown-item">
+        <span class="countdown-number" id="days">0</span>
+        <span class="countdown-label">Days</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="hours">0</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="minutes">0</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="seconds">0</span>
+        <span class="countdown-label">Seconds</span>
+      </div>
+    </div>
+
+    <a href="{{ '/pages/rsvp' | relative_url }}" class="btn btn-primary">RSVP Now</a>
+  </div>
+
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+</section>
+
+<section id="welcome">
+  <div class="container text-center">
+    <h2 class="section-title">Join Us in Celebration</h2>
+
+    <p class="mb-lg" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+      We are delighted to invite you to witness and celebrate the union of our hearts and lives.
+      Your presence will make our special day complete as we begin this blessed journey together in faith and love.
+    </p>
+
+    <div class="olive-branch-divider"></div>
+
+    <div class="grid grid-3 mt-xl">
+      <div class="card fade-in">
+        <h3>{{ site.wedding.ceremony_time }}</h3>
+        <p class="text-uppercase mb-sm text-olive">Ceremony</p>
+        <p>{{ site.wedding.ceremony_venue }}</p>
+      </div>
+
+      <div class="card fade-in fade-in-delay-1">
+        <h3>{{ site.wedding.reception_time }}</h3>
+        <p class="text-uppercase mb-sm text-olive">Reception</p>
+        <p>{{ site.wedding.reception_venue }}</p>
+      </div>
+
+      <div class="card fade-in fade-in-delay-2">
+        <h3>Garden Formal</h3>
+        <p class="text-uppercase mb-sm text-olive">Dress Code</p>
+        <p>Light colors and floral patterns welcome</p>
+      </div>
+    </div>
+
+    <div class="mt-xl">
+      <a href="{{ '/pages/details' | relative_url }}" class="btn btn-outline">View Full Details</a>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,41 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>{{ site.wedding.couple_names }}</h4>
+        <p>Join us as we celebrate our wedding and the beginning of our journey together in faith and love.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="{{ '/pages/story' | relative_url }}">Our Story</a></li>
+          <li><a href="{{ '/pages/details' | relative_url }}">Wedding Details</a></li>
+          <li><a href="{{ '/pages/rsvp' | relative_url }}">RSVP</a></li>
+          <li><a href="{{ '/pages/registry' | relative_url }}">Registry</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>For questions or concerns, please contact:</p>
+        <p>
+          <a href="mailto:hello@stephen-stephanie.com">hello@stephen-stephanie.com</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="scripture text-center">
+      And now these three remain: faith, hope and love. But the greatest of these is love.
+      <span class="reference">— 1 Corinthians 13:13</span>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.wedding.couple_names }}. Made with love and faith. 🌿</p>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+

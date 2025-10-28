@@ -1,0 +1,38 @@
+title: Stephen & Stephanie
+description: Join us as we celebrate our wedding on our special day
+baseurl: ""
+url: "https://stephen-and-stephanie.com"
+
+markdown: kramdown
+permalink: pretty
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+wedding:
+  couple_names: "Stephen & Stephanie"
+  groom_name: "Stephen"
+  bride_name: "Stephanie"
+  date: "2026-06-20"
+  date_formatted: "February 18, 2026"
+  ceremony_time: "10:00 AM"
+  ceremony_venue: "Balay sa Bukid"
+  ceremony_address: "Malasag, Barangay Cugman, Cagayan De Oro City, 9000"
+  ceremony_lat: "8.4580425"
+  ceremony_lng: "124.6915295"
+  reception_venue: "Balay sa Bukid"
+  reception_address: "Malasag, Barangay Cugman, Cagayan De Oro City, 9000"
+  reception_time: "12:30 PM"
+
+collections:
+  sections:
+    output: false
+

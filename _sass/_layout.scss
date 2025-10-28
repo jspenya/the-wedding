@@ -1,0 +1,199 @@
+// Reset & Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $off-white;
+  overflow-x: hidden;
+}
+
+// Container
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+
+  @media (min-width: $tablet) {
+    padding: 0 40px;
+  }
+}
+
+// Section
+section {
+  padding: $spacing-xxl 0;
+  position: relative;
+
+  @media (max-width: $tablet) {
+    padding: $spacing-xl 0;
+  }
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, $olive-medium, transparent);
+    margin: $spacing-md auto 0;
+  }
+}
+
+// Decorative Elements
+.olive-branch-divider {
+  text-align: center;
+  margin: $spacing-lg 0;
+  color: $olive-light;
+  font-size: 2rem;
+
+  &::before {
+    content: '🌿';
+  }
+}
+
+// Card Component
+.card {
+  background: $white;
+  border-radius: $border-radius;
+  padding: $spacing-lg;
+  box-shadow: $box-shadow-light;
+  transition: transform $transition-speed $transition-smooth,
+              box-shadow $transition-speed $transition-smooth;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $box-shadow-medium;
+  }
+}
+
+// Grid Layout
+.grid {
+  display: grid;
+  gap: $spacing-lg;
+
+  &.grid-2 {
+    grid-template-columns: 1fr;
+
+    @media (min-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &.grid-3 {
+    grid-template-columns: 1fr;
+
+    @media (min-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+// Button
+.btn {
+  display: inline-block;
+  padding: $spacing-sm $spacing-lg;
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: all $transition-speed $transition-smooth;
+
+  &.btn-primary {
+    background: $olive-dark;
+    color: $white;
+
+    &:hover {
+      background: $olive-medium;
+      transform: translateY(-2px);
+      box-shadow: $box-shadow-medium;
+    }
+  }
+
+  &.btn-outline {
+    background: transparent;
+    color: $olive-dark;
+    border: 2px solid $olive-dark;
+
+    &:hover {
+      background: $olive-dark;
+      color: $white;
+    }
+  }
+
+  &:focus {
+    outline: 3px solid $olive-light;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// Fade-in Animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s $transition-smooth forwards;
+}
+
+.fade-in-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.fade-in-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.fade-in-delay-3 {
+  animation-delay: 0.6s;
+}
+
+// Utility Classes
+.text-center {
+  text-align: center;
+}
+
+.mb-0 { margin-bottom: 0; }
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+.mb-xl { margin-bottom: $spacing-xl; }
+
+.mt-0 { margin-top: 0; }
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+.mt-xl { margin-top: $spacing-xl; }
+

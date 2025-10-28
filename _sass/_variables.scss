@@ -1,0 +1,64 @@
+// Color Palette - Olive Green & White Theme
+$olive-dark: #6B7C59;
+$olive-medium: #8B9F7A;
+$olive-light: #A4B494;
+$olive-pale: #C8D4BF;
+
+$white: #FFFFFF;
+$off-white: #FDFDF8;
+$cream: #F9F9F4;
+
+$earth-tan: #D4C5B0;
+$earth-light: #E8DCC4;
+
+$text-dark: #2C3A2B;
+$text-medium: #4A5D4A;
+$text-light: #6B7C69;
+
+// Typography
+$font-heading: 'Playfair Display', 'Georgia', serif;
+$font-body: 'Lora', 'Georgia', serif;
+$font-sans: 'Montserrat', 'Helvetica', sans-serif;
+$font-script: 'Great Vibes', cursive;
+
+$font-size-base: 16px;
+$font-size-small: 14px;
+$font-size-large: 18px;
+$font-size-h1: 3rem;
+$font-size-h2: 2.5rem;
+$font-size-h3: 2rem;
+$font-size-h4: 1.5rem;
+$font-size-h5: 1.25rem;
+$font-size-h6: 1rem;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2.5rem;
+$spacing-xl: 4rem;
+$spacing-xxl: 6rem;
+
+// Breakpoints
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1024px;
+$wide: 1440px;
+
+// Layout
+$max-width: 1200px;
+$container-padding: 20px;
+
+// Effects
+$transition-speed: 0.3s;
+$transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+$box-shadow-light: 0 2px 8px rgba(44, 58, 43, 0.1);
+$box-shadow-medium: 0 4px 16px rgba(44, 58, 43, 0.15);
+$border-radius: 8px;
+
+// Z-index layers
+$z-modal: 1000;
+$z-header: 100;
+$z-dropdown: 50;
+$z-overlay: 900;
+

@@ -1,0 +1,176 @@
+---
+layout: page
+title: Wedding Details
+subtitle: Everything you need to know about our special day
+permalink: /pages/details/
+---
+
+<section>
+  <div class="container">
+    <div class="grid grid-2 mb-xxl">
+      <div class="card">
+        <h3 class="text-olive mb-md">⛪ Ceremony</h3>
+        <h4>{{ site.wedding.ceremony_venue }}</h4>
+        <p class="mb-sm">{{ site.wedding.ceremony_address }}</p>
+        <p class="mb-md"><strong>{{ site.wedding.date_formatted }} at {{ site.wedding.ceremony_time }}</strong></p>
+        <p>
+          Join us for an intimate Christian ceremony in our beautiful garden chapel.
+          The ceremony will include traditional vows, scripture readings, and worship music.
+        </p>
+        <a href="https://maps.google.com/?q={{ site.wedding.ceremony_address | url_encode }}"
+           target="_blank"
+           class="btn btn-outline mt-md">
+          Get Directions
+        </a>
+      </div>
+
+      <div class="card">
+        <h3 class="text-olive mb-md">🥂 Reception</h3>
+        <h4>{{ site.wedding.reception_venue }}</h4>
+        <p class="mb-sm">{{ site.wedding.reception_address }}</p>
+        <p class="mb-md"><strong>{{ site.wedding.date_formatted }} at {{ site.wedding.reception_time }}</strong></p>
+        <p>
+          Following the ceremony, please join us for a joyful reception featuring dinner, dancing,
+          and celebration under the stars in our garden pavilion.
+        </p>
+        <a href="https://maps.google.com/?q={{ site.wedding.reception_address | url_encode }}"
+           target="_blank"
+           class="btn btn-outline mt-md">
+          Get Directions
+        </a>
+      </div>
+    </div>
+
+    <div class="olive-branch-divider"></div>
+
+    <div class="mb-xxl">
+      <h2 class="section-title">Order of Events</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>2:00 PM</h4>
+          <p><strong>Guest Arrival</strong></p>
+          <p>Please arrive early to find your seat and enjoy the garden atmosphere.</p>
+        </div>
+
+        <div class="card">
+          <h4>2:30 PM</h4>
+          <p><strong>Ceremony Begins</strong></p>
+          <p>The wedding ceremony begins. Please silence all devices.</p>
+        </div>
+
+        <div class="card">
+          <h4>3:30 PM</h4>
+          <p><strong>Cocktail Hour</strong></p>
+          <p>Light refreshments and drinks served in the courtyard garden.</p>
+        </div>
+
+        <div class="card">
+          <h4>4:30 PM</h4>
+          <p><strong>Reception & Dinner</strong></p>
+          <p>Seated dinner service with toasts and speeches.</p>
+        </div>
+
+        <div class="card">
+          <h4>7:00 PM</h4>
+          <p><strong>Dancing</strong></p>
+          <p>First dance, parent dances, and open dance floor.</p>
+        </div>
+
+        <div class="card">
+          <h4>9:00 PM</h4>
+          <p><strong>Send-Off</strong></p>
+          <p>Sparkler exit and farewell to the newlyweds.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="olive-branch-divider"></div>
+
+    <div class="mb-xxl">
+      <h2 class="section-title">Dress Code</h2>
+      <div class="card text-center" style="max-width: 700px; margin: 0 auto;">
+        <h3 class="text-olive mb-md">Garden Formal</h3>
+        <p class="mb-md">
+          We encourage you to dress elegantly while keeping in mind our outdoor garden setting.
+          Think romantic, natural, and refined.
+        </p>
+        <div class="grid grid-2" style="text-align: left;">
+          <div>
+            <h4>Suggested for Ladies</h4>
+            <ul>
+              <li>Formal dresses or gowns</li>
+              <li>Light colors and floral patterns</li>
+              <li>Avoid stiletto heels (grass!)</li>
+              <li>Consider a light wrap for evening</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Suggested for Gentlemen</h4>
+            <ul>
+              <li>Suits or dress slacks with blazer</li>
+              <li>Ties optional but encouraged</li>
+              <li>Light colors welcome</li>
+              <li>Dress shoes appropriate for grass</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="olive-branch-divider"></div>
+
+    <div class="mb-xxl">
+      <h2 class="section-title">Parking & Accessibility</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Parking Information</h4>
+          <p>
+            Free parking is available on-site with designated spaces for guests.
+            Parking attendants will be available to direct you. Overflow parking is available
+            in the adjacent lot, just a short walk to the venue.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Accessibility</h4>
+          <p>
+            The venue is wheelchair accessible with designated parking spaces near the entrance.
+            Accessible seating will be available for the ceremony and reception.
+            Please let us know if you have specific accessibility needs.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="olive-branch-divider"></div>
+
+    <div>
+      <h2 class="section-title">Location Map</h2>
+      <div class="card">
+        <div id="map" style="width: 100%; height: 450px; border-radius: 8px; overflow: hidden;">
+          <iframe
+            width="100%"
+            height="450"
+            frameborder="0"
+            style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q={{ site.wedding.ceremony_address | url_encode }}&zoom=15"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="mt-md text-center">
+          <a href="https://maps.google.com/?q={{ site.wedding.ceremony_address | url_encode }}"
+             target="_blank"
+             class="btn btn-primary">
+            Open in Google Maps
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center mt-xl">
+      <p class="mb-md">Have questions about the venue or schedule?</p>
+      <a href="mailto:hello@stephen-stephanie.com" class="btn btn-outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
