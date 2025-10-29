@@ -26,7 +26,8 @@ Jekyll::Hooks.register :site, :after_init do |site|
     'contact_us_email' => ENV['CONTACT_US_EMAIL'],
     'wedding_coordinator_name' => ENV['WEDDING_COORDINATOR_NAME'],
     'wedding_coordinator_email' => ENV['WEDDING_COORDINATOR_EMAIL'],
-    'wedding_coordinator_phone' => ENV['WEDDING_COORDINATOR_PHONE']
+    'wedding_coordinator_phone' => ENV['WEDDING_COORDINATOR_PHONE'],
+    'formspree_form_id' => ENV['FORMSPREE_FORM_ID']
   }
 
   puts "✅ Wedding config loaded successfully!"

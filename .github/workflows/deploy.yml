@@ -53,6 +53,7 @@ jobs:
           WEDDING_COORDINATOR_NAME: ${{ secrets.WEDDING_COORDINATOR_NAME }}
           WEDDING_COORDINATOR_EMAIL: ${{ secrets.WEDDING_COORDINATOR_EMAIL }}
           WEDDING_COORDINATOR_PHONE: ${{ secrets.WEDDING_COORDINATOR_PHONE }}
+          FORMSPREE_FORM_ID: ${{ secrets.FORMSPREE_FORM_ID }}
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
 
       - name: Upload artifact
