@@ -1,4 +1,12 @@
 Jekyll::Hooks.register :site, :after_init do |site|
+  # Debug logging
+  puts "=" * 60
+  puts "🔍 Loading Wedding Environment Variables"
+  puts "=" * 60
+  puts "COUPLE_NAMES: #{ENV['COUPLE_NAMES'] ? '✅ Present' : '❌ Missing'}"
+  puts "CEREMONY_VENUE: #{ENV['CEREMONY_VENUE'] ? '✅ Present' : '❌ Missing'}"
+  puts "=" * 60
+
   site.config['wedding'] = {
     'couple_names' => ENV['COUPLE_NAMES'],
     'groom_name' => ENV['GROOM_NAME'],
@@ -20,5 +28,7 @@ Jekyll::Hooks.register :site, :after_init do |site|
     'wedding_coordinator_email' => ENV['WEDDING_COORDINATOR_EMAIL'],
     'wedding_coordinator_phone' => ENV['WEDDING_COORDINATOR_PHONE']
   }
+
+  puts "✅ Wedding config loaded successfully!"
 end
 
