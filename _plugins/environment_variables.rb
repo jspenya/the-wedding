@@ -1,8 +1,4 @@
-require 'dotenv'
-
 Jekyll::Hooks.register :site, :after_init do |site|
-  Dotenv.load
-
   site.config['wedding'] = {
     'couple_names' => ENV['COUPLE_NAMES'],
     'groom_name' => ENV['GROOM_NAME'],

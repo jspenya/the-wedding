@@ -1,0 +1,70 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Build with Jekyll
+        env:
+          COUPLE_NAMES: ${{ secrets.COUPLE_NAMES }}
+          GROOM_NAME: ${{ secrets.GROOM_NAME }}
+          BRIDE_NAME: ${{ secrets.BRIDE_NAME }}
+          WEDDING_DATE: ${{ secrets.WEDDING_DATE }}
+          DATE_FORMATTED: ${{ secrets.DATE_FORMATTED }}
+          CEREMONY_TIME: ${{ secrets.CEREMONY_TIME }}
+          CEREMONY_VENUE: ${{ secrets.CEREMONY_VENUE }}
+          CEREMONY_ADDRESS: ${{ secrets.CEREMONY_ADDRESS }}
+          CEREMONY_LAT: ${{ secrets.CEREMONY_LAT }}
+          CEREMONY_LNG: ${{ secrets.CEREMONY_LNG }}
+          RECEPTION_VENUE: ${{ secrets.RECEPTION_VENUE }}
+          RECEPTION_ADDRESS: ${{ secrets.RECEPTION_ADDRESS }}
+          RECEPTION_TIME: ${{ secrets.RECEPTION_TIME }}
+          RESPOND_TO_RSVP_BY: ${{ secrets.RESPOND_TO_RSVP_BY }}
+          CEREMONY_GMAPS_URL: ${{ secrets.CEREMONY_GMAPS_URL }}
+          CONTACT_US_EMAIL: ${{ secrets.CONTACT_US_EMAIL }}
+          WEDDING_COORDINATOR_NAME: ${{ secrets.WEDDING_COORDINATOR_NAME }}
+          WEDDING_COORDINATOR_EMAIL: ${{ secrets.WEDDING_COORDINATOR_EMAIL }}
+          WEDDING_COORDINATOR_PHONE: ${{ secrets.WEDDING_COORDINATOR_PHONE }}
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+

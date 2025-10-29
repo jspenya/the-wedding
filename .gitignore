@@ -6,4 +6,5 @@ vendor
 .bundle
 Gemfile.lock
 .DS_Store
-.env
+GITHUB_SECRETS_SETUP.md
+local-dev.sh
