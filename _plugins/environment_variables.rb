@@ -5,7 +5,14 @@ Jekyll::Hooks.register :site, :after_init do |site|
   puts "=" * 60
   puts "COUPLE_NAMES: #{ENV['COUPLE_NAMES'] ? '✅ Present' : '❌ Missing'}"
   puts "CEREMONY_VENUE: #{ENV['CEREMONY_VENUE'] ? '✅ Present' : '❌ Missing'}"
+  puts "SITE_TITLE: #{ENV['SITE_TITLE'] ? '✅ Present' : '❌ Missing (using default)'}"
+  puts "SITE_DESCRIPTION: #{ENV['SITE_DESCRIPTION'] ? '✅ Present' : '❌ Missing (using default)'}"
+  puts "OG_IMAGE: #{ENV['OG_IMAGE'] ? '✅ Present' : '❌ Missing (using default)'}"
   puts "=" * 60
+
+  site.config['title'] = ENV['SITE_TITLE'] || site.config['title']
+  site.config['description'] = ENV['SITE_DESCRIPTION'] || site.config['description']
+  site.config['og_image'] = ENV['OG_IMAGE'] || '/assets/images/og-image.jpg'
 
   site.config['wedding'] = {
     'couple_names' => ENV['COUPLE_NAMES'],
