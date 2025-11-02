@@ -87,19 +87,17 @@ permalink: /pages/details/
           <div>
             <h4>Suggested for Ladies</h4>
             <ul>
-              <li>Formal dresses or gowns</li>
-              <li>Light colors and floral patterns</li>
-              <li>Avoid stiletto heels (grass!)</li>
-              <li>Consider a light wrap for evening</li>
+              {% for item in site.wedding.dress_code_ladies %}
+              <li>{{ item }}</li>
+              {% endfor %}
             </ul>
           </div>
           <div>
             <h4>Suggested for Gentlemen</h4>
             <ul>
-              <li>Suits or dress slacks with blazer</li>
-              <li>Ties optional but encouraged</li>
-              <li>Light colors welcome</li>
-              <li>Dress shoes appropriate for grass</li>
+              {% for item in site.wedding.dress_code_gentlemen %}
+              <li>{{ item }}</li>
+              {% endfor %}
             </ul>
           </div>
         </div>

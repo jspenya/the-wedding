@@ -14,6 +14,22 @@ Jekyll::Hooks.register :site, :after_init do |site|
   site.config['description'] = ENV['SITE_DESCRIPTION'] || site.config['description']
   site.config['og_image'] = ENV['OG_IMAGE'] || '/assets/images/og-image.jpg'
 
+  # Load dress code suggestions
+  dress_code_ladies = []
+  dress_code_gentlemen = []
+
+  i = 1
+  while ENV["DRESS_CODE_LADIES_#{i}"]
+    dress_code_ladies << ENV["DRESS_CODE_LADIES_#{i}"]
+    i += 1
+  end
+
+  i = 1
+  while ENV["DRESS_CODE_GENTLEMEN_#{i}"]
+    dress_code_gentlemen << ENV["DRESS_CODE_GENTLEMEN_#{i}"]
+    i += 1
+  end
+
   site.config['wedding'] = {
     'couple_names' => ENV['COUPLE_NAMES'],
     'groom_name' => ENV['GROOM_NAME'],
@@ -34,7 +50,9 @@ Jekyll::Hooks.register :site, :after_init do |site|
     'wedding_coordinator_name' => ENV['WEDDING_COORDINATOR_NAME'],
     'wedding_coordinator_email' => ENV['WEDDING_COORDINATOR_EMAIL'],
     'wedding_coordinator_phone' => ENV['WEDDING_COORDINATOR_PHONE'],
-    'formspree_form_id' => ENV['FORMSPREE_FORM_ID']
+    'formspree_form_id' => ENV['FORMSPREE_FORM_ID'],
+    'dress_code_ladies' => dress_code_ladies,
+    'dress_code_gentlemen' => dress_code_gentlemen
   }
 
   puts "✅ Wedding config loaded successfully!"
