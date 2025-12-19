@@ -2,6 +2,7 @@ title: Stephen & Stephanie
 description: Join us as we celebrate our wedding on our special day
 baseurl: ""
 url: "https://one-steph-closer.com"
+og_image: /assets/images/og-image.jpg
 
 markdown: kramdown
 permalink: pretty
