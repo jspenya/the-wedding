@@ -57,6 +57,7 @@ jobs:
           SITE_TITLE: ${{ secrets.SITE_TITLE }}
           SITE_DESCRIPTION: ${{ secrets.SITE_DESCRIPTION }}
           OG_IMAGE: ${{ secrets.OG_IMAGE }}
+          CALL_US_AT: ${{ secrets.CALL_US_AT }}
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
 
       - name: Upload artifact

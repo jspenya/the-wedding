@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3.3"
 gem "webrick", "~> 1.8"
+gem "dotenv", "~> 3.1"
 
 # Ruby 3.4+ compatibility gems
 gem "csv", "~> 3.3"

@@ -1,3 +1,8 @@
+require 'dotenv'
+
+# Load .env file if it exists
+Dotenv.load
+
 Jekyll::Hooks.register :site, :after_init do |site|
   # Debug logging
   puts "=" * 60
@@ -24,7 +29,7 @@ Jekyll::Hooks.register :site, :after_init do |site|
     i += 1
   end
 
-  i = 1
+i = 1
   while ENV["DRESS_CODE_GENTLEMEN_#{i}"]
     dress_code_gentlemen << ENV["DRESS_CODE_GENTLEMEN_#{i}"]
     i += 1
@@ -52,7 +57,8 @@ Jekyll::Hooks.register :site, :after_init do |site|
     'wedding_coordinator_phone' => ENV['WEDDING_COORDINATOR_PHONE'],
     'formspree_form_id' => ENV['FORMSPREE_FORM_ID'],
     'dress_code_ladies' => dress_code_ladies,
-    'dress_code_gentlemen' => dress_code_gentlemen
+    'dress_code_gentlemen' => dress_code_gentlemen,
+    'call_us_at' => ENV['CALL_US_AT']
   }
 
   puts "✅ Wedding config loaded successfully!"

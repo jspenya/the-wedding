@@ -9,17 +9,16 @@ permalink: /pages/details/
   <div class="container">
     <div class="mb-xxl">
       <div class="card text-center" style="max-width: 800px; margin: 0 auto;">
-        <h3 class="text-olive mb-md">⛪ Ceremony & Reception 🥂</h3>
+        <h3 class="text-olive mb-md">Ceremony & Reception</h3>
         <h4>{{ site.wedding.ceremony_venue }}</h4>
         <p class="mb-sm">{{ site.wedding.ceremony_address }}</p>
         <p class="mb-md"><strong>{{ site.wedding.date_formatted }}</strong></p>
         <p class="mb-sm"><strong>Ceremony:</strong> {{ site.wedding.ceremony_time }}</p>
         <p class="mb-md"><strong>Reception:</strong> {{ site.wedding.reception_time }}</p>
         <p>
-          Join us for an intimate Christian ceremony in our beautiful garden chapel.
-          The ceremony will include traditional vows, scripture readings, and worship music.
-          Following the ceremony, please join us for a joyful reception featuring dinner, dancing,
-          and celebration under the stars in our garden pavilion.
+          Join us for an intimate Christian ceremony in a beautiful garden setting as the morning sun welcomes our new beginning.
+          The ceremony will include traditional vows, scripture readings, and worship music. Afterward, please stay and celebrate
+          with us over a joyful reception of food, fellowship, and thanksgiving.
         </p>
         <a href="{{ site.wedding.ceremony_gmaps_url }}"
            target="_blank"
@@ -31,7 +30,7 @@ permalink: /pages/details/
 
     <div class="olive-branch-divider"></div>
 
-    <!-- Hide Order of Events for now
+    <!-- Hide Order of Events for now`
     <div class="mb-xxl">
       <h2 class="section-title">Order of Events</h2>
       <div class="grid grid-2">
@@ -83,32 +82,14 @@ permalink: /pages/details/
           We encourage you to dress elegantly while keeping in mind our outdoor garden setting.
           Think romantic, natural, and refined.
         </p>
-        <div class="grid grid-2" style="text-align: left;">
-          <div>
-            <h4>Suggested for Ladies</h4>
-            <ul>
-              {% for item in site.wedding.dress_code_ladies %}
-              <li>{{ item }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-          <div>
-            <h4>Suggested for Gentlemen</h4>
-            <ul>
-              {% for item in site.wedding.dress_code_gentlemen %}
-              <li>{{ item }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
+        <img src="{{ '/assets/images/sample-dress-code.svg' | relative_url }}" alt="Dress Code" class="img-fluid">
       </div>
     </div>
 
     <div class="olive-branch-divider"></div>
 
     <div class="text-center mt-xl">
-      <p class="mb-md">Have questions about the venue or schedule?</p>
-      <a href="mailto:{{ site.wedding.contact_us_email }}" class="btn btn-outline">Contact Us</a>
+      <p class="mb-md">Have questions about the venue or schedule? Email us at <a href="mailto:{{ site.wedding.contact_us_email }}">{{ site.wedding.contact_us_email }}</a> or call <a href="tel:{{ site.wedding.call_us_at }}">{{ site.wedding.call_us_at }}</a></p>
     </div>
   </div>
 </section>

@@ -43,32 +43,39 @@ title: Home
 
 <section id="welcome">
   <div class="container text-center">
-    <h2 class="section-title">Join Us in Celebration</h2>
+    <h2 class="section-title">Together in His love</h2>
 
     <p class="mb-lg" style="max-width: 700px; margin-left: auto; margin-right: auto;">
-      We are delighted to invite you to witness and celebrate the union of our hearts and lives.
-      Your presence will make our special day complete as we begin this blessed journey together in faith and love.
+      After years of friendship, countless conversations, and one very important "yes" - we're finally making it official! But more than a wedding, this is a covenant
+      before God, a promise made possible by His grace and love for us. Come witness, celebrate, and maybe cry a little with us!
     </p>
 
     <div class="olive-branch-divider"></div>
 
-    <div class="grid grid-3 mt-xl">
-      <div class="card fade-in">
-        <h3>{{ site.wedding.ceremony_time }}</h3>
-        <p class="text-uppercase mb-sm text-olive">Ceremony</p>
-        <p>{{ site.wedding.ceremony_venue }}</p>
-      </div>
-
+    <div class="grid grid-2 mt-xl">
       <div class="card fade-in fade-in-delay-1">
-        <h3>{{ site.wedding.reception_time }}</h3>
-        <p class="text-uppercase mb-sm text-olive">Reception</p>
-        <p>{{ site.wedding.reception_venue }}</p>
+        <h3>{{ site.wedding.ceremony_venue }}</h3>
+
+        <p class="mb-md">{{ site.wedding.ceremony_address }}</p>
+
+        <p class="text-uppercase mb-sm text-olive">Ceremony starts at:</p>
+        <h3>{{ site.wedding.ceremony_time }}</h3>
+
+        <p class="text-uppercase mb-sm text-olive">Reception starts at:</p>
+        <h3 class="mb-md">{{ site.wedding.reception_time }}</h3>
+
+        <a href="{{ site.wedding.ceremony_gmaps_url }}"
+           target="_blank"
+           class="btn btn-outline">
+          Get Directions
+        </a>
       </div>
 
       <div class="card fade-in fade-in-delay-2">
         <h3>Garden Formal</h3>
-        <p class="text-uppercase mb-sm text-olive">Dress Code</p>
-        <p>Light colors and floral patterns welcome</p>
+        <p class="text-uppercase mb-sm text-olive">Attire Guide</p>
+        <p>Let this be your moment to sparkle! Come dressed in formal wear that celebrates your individuality with a dash of glam and a nod to our color theme.</p>
+        <img src="{{ '/assets/images/color-guide.svg' | relative_url }}" alt="Dress Code" class="img-fluid" style="transform: rotate(90deg); max-width: 200px;">
       </div>
     </div>
 
