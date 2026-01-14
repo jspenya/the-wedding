@@ -714,6 +714,148 @@
   }
 }
 
+// FAQ Section - mobile-first
+.faq {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq__intro {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+  
+  p {
+    color: $text-medium;
+  }
+}
+
+.faq__intro-title {
+  font-family: $font-heading;
+  font-size: 1.25rem;
+  color: $olive-dark;
+  margin-bottom: $spacing-xs;
+}
+
+.faq__item {
+  background: $white;
+  border-radius: $border-radius;
+  padding: $spacing-md;
+  margin-bottom: $spacing-sm;
+  box-shadow: $box-shadow-light;
+
+  @media (min-width: $tablet) {
+    padding: $spacing-lg;
+  }
+}
+
+.faq__question {
+  font-family: $font-sans;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $olive-dark;
+  margin-bottom: $spacing-sm;
+  line-height: 1.4;
+
+  @media (min-width: $tablet) {
+    font-size: 1rem;
+  }
+}
+
+.faq__answer {
+  font-family: $font-body;
+  font-size: 0.95rem;
+  color: $text-medium;
+  line-height: 1.6;
+  margin: 0;
+}
+
+// Prayer Section - mobile-first
+.prayer {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.prayer__card {
+  background: $white;
+  border-radius: $border-radius;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $box-shadow-light;
+
+  @media (min-width: $tablet) {
+    padding: $spacing-xl;
+  }
+
+  &--highlight {
+    background: linear-gradient(135deg, $olive-dark 0%, $olive-medium 100%);
+    color: $white;
+
+    .prayer__card-title {
+      color: $white;
+    }
+
+    .prayer__text {
+      color: rgba(255, 255, 255, 0.95);
+    }
+  }
+}
+
+.prayer__card-title {
+  font-family: $font-heading;
+  font-size: 1.25rem;
+  color: $olive-dark;
+  margin-bottom: $spacing-md;
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    font-size: 1.5rem;
+  }
+}
+
+.prayer__list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: $spacing-lg;
+    margin-bottom: $spacing-sm;
+    font-family: $font-body;
+    color: $text-medium;
+    line-height: 1.6;
+
+    &::before {
+      content: '🙏';
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.prayer__text {
+  font-family: $font-body;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: $spacing-md;
+
+  &:last-of-type {
+    margin-bottom: $spacing-sm;
+  }
+}
+
+.prayer__amen {
+  font-family: $font-heading;
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 0;
+  padding-top: $spacing-sm;
+}
+
 // Gallery Placeholder - mobile-first
 .gallery-placeholder {
   background: $white;
