@@ -1,43 +1,15 @@
-<footer class="site-footer">
+<footer class="footer">
   <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>{{ site.wedding.couple_names }}</h4>
-        <p>Join us as we celebrate our wedding and the beginning of our journey together in faith and love.</p>
-      </div>
+    <p class="footer__names">{{ site.wedding.couple_names }}</p>
+    <p class="footer__date">{{ site.wedding.date_formatted }}</p>
 
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="{{ '/pages/details' | relative_url }}">Wedding Details</a></li>
-          <li><a href="{{ '/pages/rsvp' | relative_url }}">RSVP</a></li>
-          <li><a href="{{ '/pages/registry' | relative_url }}">Registry</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <p>For questions or concerns, please contact:</p>
-        <p>
-          <a href="mailto:{{ site.wedding.contact_us_email }}">{{ site.wedding.contact_us_email }}</a>
-        </p>
-        <p>
-          <a href="tel:{{ site.wedding.call_us_at }}">{{ site.wedding.call_us_at }}</a>
-        </p>
-      </div>
-    </div>
-
-    <div class="scripture text-center">
+    <p class="footer__scripture">
       And now these three remain: faith, hope and love. But the greatest of these is love.
-      <span class="reference">— 1 Corinthians 13:13</span>
-    </div>
+      <span class="footer__reference">— 1 Corinthians 13:13</span>
+    </p>
 
-    <div class="footer-bottom">
-      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.wedding.couple_names }}. Made with love and faith. 🌿</p>
-    </div>
+    <p class="footer__bottom">
+      Made with 💒 for our wedding day
+    </p>
   </div>
 </footer>
-
-<!-- JavaScript -->
-<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-

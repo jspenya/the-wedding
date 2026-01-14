@@ -4,84 +4,192 @@ title: Home
 ---
 
 <section class="hero" id="hero">
-  <div class="hero-content fade-in">
-    <h1 class="couple-names">{{ site.wedding.couple_names }}</h1>
+  <div class="hero__content fade-in">
+    <h1 class="hero__names">{{ site.wedding.couple_names }}</h1>
+    <p class="hero__tagline">are getting married</p>
+    <h2 class="hero__date">{{ site.wedding.date_formatted }}</h2>
 
-    <p class="text-uppercase mb-md">are getting married</p>
-
-    <h2 class="mb-lg wedding-date">{{ site.wedding.date_formatted }}</h2>
-
-    <div class="scripture mb-lg">
+    <div class="hero__scripture">
       We love because He first loved us
-      <span class="reference">— 1 John 4:19</span>
+      <span class="hero__reference">— 1 John 4:19</span>
     </div>
 
     <div class="countdown" id="countdown" data-wedding-date="{{ site.wedding.date_formatted }}">
-      <div class="countdown-item">
-        <span class="countdown-number" id="days">0</span>
-        <span class="countdown-label">Days</span>
+      <div class="countdown__item">
+        <span class="countdown__number" id="days">0</span>
+        <span class="countdown__label">Days</span>
       </div>
-      <div class="countdown-item">
-        <span class="countdown-number" id="hours">0</span>
-        <span class="countdown-label">Hours</span>
+      <div class="countdown__item">
+        <span class="countdown__number" id="hours">0</span>
+        <span class="countdown__label">Hours</span>
       </div>
-      <div class="countdown-item">
-        <span class="countdown-number" id="minutes">0</span>
-        <span class="countdown-label">Minutes</span>
+      <div class="countdown__item">
+        <span class="countdown__number" id="minutes">0</span>
+        <span class="countdown__label">Minutes</span>
       </div>
-      <div class="countdown-item">
-        <span class="countdown-number" id="seconds">0</span>
-        <span class="countdown-label">Seconds</span>
+      <div class="countdown__item">
+        <span class="countdown__number" id="seconds">0</span>
+        <span class="countdown__label">Seconds</span>
       </div>
     </div>
 
-    <a href="{{ '/pages/rsvp' | relative_url }}" class="btn btn-primary">RSVP Now</a>
+    <a href="#rsvp" class="btn btn--primary">RSVP Now</a>
   </div>
 
-  <div class="scroll-indicator" id="scrollIndicator"></div>
+  <div class="hero__scroll" id="scrollIndicator"></div>
 </section>
 
-<section id="welcome">
-  <div class="container text-center">
-    <h2 class="section-title">Together in His love</h2>
+<section class="section section--alt" id="details">
+  <div class="container">
+    <h2 class="section__title">Wedding Details</h2>
 
-    <p class="mb-lg" style="max-width: 700px; margin-left: auto; margin-right: auto;">
-      After years of friendship, countless conversations, and one very important "yes" - we're finally making it official! But more than a wedding, this is a covenant
-      before God, a promise made possible by His grace and love for us. Come witness, celebrate, and maybe cry a little with us!
+    <div class="details-card">
+      <h3 class="details-card__heading">Ceremony & Reception</h3>
+      <h4 class="details-card__venue">{{ site.wedding.ceremony_venue }}</h4>
+      <p class="details-card__address">{{ site.wedding.ceremony_address }}</p>
+      <p class="details-card__date">{{ site.wedding.date_formatted }}</p>
+
+      <div class="details-card__times">
+        <div class="details-card__time">
+          <span class="details-card__label">Ceremony</span>
+          <span class="details-card__value">{{ site.wedding.ceremony_time }}</span>
+        </div>
+        <div class="details-card__time">
+          <span class="details-card__label">Reception</span>
+          <span class="details-card__value">{{ site.wedding.reception_time }}</span>
+        </div>
+      </div>
+
+      <p class="details-card__description">
+        Join us for an intimate Christian ceremony in a beautiful garden setting as the morning sun welcomes our new beginning.
+        The ceremony will include traditional vows, scripture readings, and worship music.
+      </p>
+
+      <a href="{{ site.wedding.ceremony_gmaps_url }}" target="_blank" class="btn btn--outline">
+        Get Directions
+      </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="dress-code">
+      <h3 class="dress-code__title">Dress Code</h3>
+      <h4 class="dress-code__style">Garden Formal</h4>
+      <p class="dress-code__description">
+        We encourage you to dress elegantly while keeping in mind our outdoor garden setting. Please follow the wedding color pallete by wearing dark shades of green.
+        Think modest, natural, and refined.
+      </p>
+      <div class="dress-code__card">
+        <h5 class="dress-code__card-title">For Principal Sponsors & Entourage</h5>
+        <p class="dress-code__description">Ladies: Long gown</p>
+        <p class="dress-code__description">Gentlemen: Half button down barong tagalog, black pants, brown/black shoes.</p>
+      </div>
+
+      <div class="dress-code__card">
+        <h5 class="dress-code__card-title">For Guests</h5>
+        <p class="dress-code__description">Please feel free to wear your comfortable casual attire. Don't forget to follow the wedding color pallete.</p>
+      </div>
+      <img src="{{ '/assets/images/sample-dress-code.svg' | relative_url }}" alt="Dress Code Examples" class="dress-code__image dress-code__image--large">
+      <p class="dress-code__description">
+        Wedding color pallete:
+      </p>
+      <img src="{{ '/assets/images/color-guide.svg' | relative_url }}" alt="Color Guide" class="dress-code__image dress-code__image--small">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rsvp">
+  <div class="container">
+    <h2 class="section__title">RSVP</h2>
+
+    <div class="rsvp-card">
+      <p class="rsvp-card__intro">
+        We hope you can join us on our special day!<br>
+        Kindly respond by <strong>{{ site.wedding.respond_to_rsvp_by }}</strong>.
+      </p>
+
+      <form
+        action="https://formspree.io/f/{{ site.wedding.formspree_form_id }}"
+        method="POST"
+        id="rsvpForm"
+        class="rsvp-form">
+
+        <div class="rsvp-form__group">
+          <label for="name" class="rsvp-form__label">Full Name(s) <span class="rsvp-form__required">*</span></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="John & Jane Doe"
+            class="rsvp-form__input">
+        </div>
+
+        <div class="rsvp-form__group">
+          <label for="email" class="rsvp-form__label">Email Address <span class="rsvp-form__required">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="your.email@example.com"
+            class="rsvp-form__input">
+        </div>
+
+        <div class="rsvp-form__group">
+          <label for="attendance" class="rsvp-form__label">Will you be attending? <span class="rsvp-form__required">*</span></label>
+          <select id="attendance" name="attendance" required class="rsvp-form__input">
+            <option value="">Please select...</option>
+            <option value="yes">Yes, I/We will be there!</option>
+            <option value="no">Regretfully, I/We cannot attend</option>
+          </select>
+        </div>
+
+        <div class="rsvp-form__group" id="guestCountGroup" style="display: none;">
+          <label for="guestCount" class="rsvp-form__label">Number of Guests <span class="rsvp-form__required">*</span></label>
+          <input
+            type="number"
+            id="guestCount"
+            name="guestCount"
+            min="1"
+            max="10"
+            placeholder="2"
+            class="rsvp-form__input">
+        </div>
+
+        <div class="rsvp-form__group">
+          <label for="message" class="rsvp-form__label">Message for the Couple</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Share your well wishes or a prayer for our marriage..."
+            class="rsvp-form__input rsvp-form__textarea"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full">Send Your RSVP</button>
+      </form>
+
+      <div id="formSuccess" class="rsvp-card__success" style="display: none;">
+        <h3>Thank You! 🌿</h3>
+        <p>We can't wait to celebrate with you!</p>
+      </div>
+    </div>
+
+    <p class="rsvp-contact">
+      Questions? Email us at <a href="mailto:{{ site.wedding.contact_us_email }}">{{ site.wedding.contact_us_email }}</a>
     </p>
-
-    <div class="olive-branch-divider"></div>
-
-    <div class="grid grid-2 mt-xl">
-      <div class="card fade-in fade-in-delay-1">
-        <h3>{{ site.wedding.ceremony_venue }}</h3>
-
-        <p class="mb-md">{{ site.wedding.ceremony_address }}</p>
-
-        <p class="text-uppercase mb-sm text-olive">Ceremony starts at:</p>
-        <h3>{{ site.wedding.ceremony_time }}</h3>
-
-        <p class="text-uppercase mb-sm text-olive">Reception starts at:</p>
-        <h3 class="mb-md">{{ site.wedding.reception_time }}</h3>
-
-        <a href="{{ site.wedding.ceremony_gmaps_url }}"
-           target="_blank"
-           class="btn btn-outline">
-          Get Directions
-        </a>
-      </div>
-
-      <div class="card fade-in fade-in-delay-2">
-        <h3>Garden Formal</h3>
-        <p class="text-uppercase mb-sm text-olive">Attire Guide</p>
-        <p>Let this be your moment to sparkle! Come dressed in formal wear that celebrates your individuality with a dash of glam and a nod to our color theme.</p>
-        <img src="{{ '/assets/images/color-guide.svg' | relative_url }}" alt="Dress Code" class="img-fluid" style="transform: rotate(90deg); max-width: 200px;">
-      </div>
-    </div>
-
-    <div class="mt-xl">
-      <a href="{{ '/pages/details' | relative_url }}" class="btn btn-outline">View Full Details</a>
-    </div>
   </div>
 </section>
 
+<section class="section section--alt" id="gallery">
+  <div class="container">
+    <h2 class="section__title">Gallery</h2>
+
+    <div class="gallery-placeholder">
+      <h3>Wedding Day Photos</h3>
+      <p>Photos from our special day will be added here after the wedding. Check back soon!</p>
+      <p class="gallery-placeholder__emoji">📸 🌿 💒</p>
+    </div>
+  </div>
+</section>

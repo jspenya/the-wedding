@@ -1,16 +1,11 @@
-// Wedding Website JavaScript
-// Vanilla JS - No dependencies
-
 (function() {
   'use strict';
 
-  // ===========================
   // Mobile Navigation
-  // ===========================
   const navToggle = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileClose = document.getElementById('mobileClose');
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav-list a');
+  const mobileNavLinks = document.querySelectorAll('.mobile-menu__list a');
 
   function openMobileMenu() {
     mobileMenu.classList.add('active');
@@ -32,12 +27,10 @@
     mobileClose.addEventListener('click', closeMobileMenu);
   }
 
-  // Close mobile menu when clicking a link
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', closeMobileMenu);
   });
 
-  // Close mobile menu when clicking outside
   if (mobileMenu) {
     mobileMenu.addEventListener('click', function(e) {
       if (e.target === mobileMenu) {
@@ -46,9 +39,7 @@
     });
   }
 
-  // ===========================
   // Header Scroll Behavior
-  // ===========================
   const header = document.getElementById('header');
   let lastScroll = 0;
   const scrollThreshold = 100;
@@ -56,28 +47,24 @@
   window.addEventListener('scroll', function() {
     const currentScroll = window.pageYOffset;
 
-    // Hide header when scrolling down, show when scrolling up
     if (currentScroll > scrollThreshold) {
       if (currentScroll > lastScroll) {
-        // Scrolling down
-        header.classList.add('header-hidden');
+        header.classList.add('header--hidden');
       } else {
-        // Scrolling up
-        header.classList.remove('header-hidden');
+        header.classList.remove('header--hidden');
       }
+    } else {
+      header.classList.remove('header--hidden');
     }
 
     lastScroll = currentScroll;
-  });
+  }, { passive: true });
 
-  // ===========================
   // Countdown Timer
-  // ===========================
   const countdown = document.getElementById('countdown');
 
   if (countdown) {
     const weddingDate = new Date(countdown.dataset.weddingDate).getTime();
-
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
     const minutesEl = document.getElementById('minutes');
@@ -88,8 +75,7 @@
       const distance = weddingDate - now;
 
       if (distance < 0) {
-        // Wedding day has passed
-        countdown.innerHTML = '<p class="text-olive">We\'re Married! 🎉</p>';
+        countdown.innerHTML = '<p style="font-family: inherit; color: inherit;">We\'re Married! 🎉</p>';
         return;
       }
 
@@ -104,26 +90,22 @@
       if (secondsEl) secondsEl.textContent = seconds;
     }
 
-    // Update countdown immediately and then every second
     updateCountdown();
     setInterval(updateCountdown, 1000);
   }
 
-  // ===========================
   // Smooth Scroll for Anchor Links
-  // ===========================
   const scrollIndicator = document.getElementById('scrollIndicator');
 
   if (scrollIndicator) {
     scrollIndicator.addEventListener('click', function() {
-      const nextSection = document.getElementById('welcome');
+      const nextSection = document.getElementById('details');
       if (nextSection) {
         nextSection.scrollIntoView({ behavior: 'smooth' });
       }
     });
   }
 
-  // Smooth scroll for all internal links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -137,9 +119,7 @@
     });
   });
 
-  // ===========================
-  // Scroll Animations (Intersection Observer)
-  // ===========================
+  // Scroll Animations
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -149,22 +129,44 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1';
-        entry.target.style.animation = 'fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards';
+        entry.target.style.animation = 'fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards';
         fadeInObserver.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  // Observe all fade-in elements
   const fadeElements = document.querySelectorAll('.fade-in');
   fadeElements.forEach(el => {
     el.style.opacity = '0';
     fadeInObserver.observe(el);
   });
 
-  // ===========================
+  // Active Navigation State on Scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.header__menu a');
+
+  function updateActiveNav() {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(section => {
+      const sectionHeight = section.offsetHeight;
+      const sectionTop = section.offsetTop - 100;
+      const sectionId = section.getAttribute('id');
+
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + sectionId) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+
   // RSVP Form Handling
-  // ===========================
   const rsvpForm = document.getElementById('rsvpForm');
   const attendanceSelect = document.getElementById('attendance');
   const guestCountGroup = document.getElementById('guestCountGroup');
@@ -185,13 +187,9 @@
   if (rsvpForm) {
     rsvpForm.addEventListener('submit', function(e) {
       const submitButton = rsvpForm.querySelector('button[type="submit"]');
-
-      // Disable submit button to prevent double submission
       submitButton.disabled = true;
       submitButton.textContent = 'Sending...';
 
-      // Form will be handled by Formspree
-      // On success, show success message
       setTimeout(function() {
         const formSuccess = document.getElementById('formSuccess');
         if (formSuccess) {
@@ -201,7 +199,6 @@
       }, 1000);
     });
 
-    // Client-side validation
     const emailInput = document.getElementById('email');
     if (emailInput) {
       emailInput.addEventListener('blur', function() {
@@ -217,127 +214,14 @@
     }
   }
 
-  // ===========================
-  // Gallery Lightbox
-  // ===========================
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImage = document.getElementById('lightboxImage');
-  const lightboxClose = document.getElementById('lightboxClose');
-  const lightboxPrev = document.getElementById('lightboxPrev');
-  const lightboxNext = document.getElementById('lightboxNext');
-
-  let currentImageIndex = 0;
-  const galleryImages = [];
-
-  // Collect all gallery images
-  galleryItems.forEach((item, index) => {
-    const img = item.querySelector('.gallery-image');
-    if (img) {
-      galleryImages.push({
-        src: img.src,
-        alt: img.alt
-      });
-
-      item.addEventListener('click', function() {
-        currentImageIndex = index;
-        openLightbox();
-      });
-    }
-  });
-
-  function openLightbox() {
-    if (lightbox && galleryImages.length > 0) {
-      lightbox.classList.add('active');
-      updateLightboxImage();
-      document.body.style.overflow = 'hidden';
-    }
-  }
-
-  function closeLightbox() {
-    if (lightbox) {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  }
-
-  function updateLightboxImage() {
-    if (lightboxImage && galleryImages[currentImageIndex]) {
-      lightboxImage.src = galleryImages[currentImageIndex].src;
-      lightboxImage.alt = galleryImages[currentImageIndex].alt;
-    }
-  }
-
-  function showPrevImage() {
-    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-    updateLightboxImage();
-  }
-
-  function showNextImage() {
-    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-    updateLightboxImage();
-  }
-
-  if (lightboxClose) {
-    lightboxClose.addEventListener('click', closeLightbox);
-  }
-
-  if (lightboxPrev) {
-    lightboxPrev.addEventListener('click', function(e) {
-      e.stopPropagation();
-      showPrevImage();
-    });
-  }
-
-  if (lightboxNext) {
-    lightboxNext.addEventListener('click', function(e) {
-      e.stopPropagation();
-      showNextImage();
-    });
-  }
-
-  // Close lightbox when clicking outside image
-  if (lightbox) {
-    lightbox.addEventListener('click', function(e) {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
-    });
-  }
-
-  // Keyboard navigation for lightbox
-  document.addEventListener('keydown', function(e) {
-    if (lightbox && lightbox.classList.contains('active')) {
-      if (e.key === 'Escape') {
-        closeLightbox();
-      } else if (e.key === 'ArrowLeft') {
-        showPrevImage();
-      } else if (e.key === 'ArrowRight') {
-        showNextImage();
-      }
-    }
-  });
-
-  // ===========================
-  // Lazy Loading Images
-  // ===========================
-  // Modern browsers support native lazy loading with loading="lazy"
-  // For older browsers, we can add a fallback
-  if ('loading' in HTMLImageElement.prototype) {
-    // Native lazy loading is supported
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-      img.src = img.dataset.src || img.src;
-    });
-  } else {
-    // Fallback for older browsers using Intersection Observer
+  // Lazy Loading Images Fallback
+  if (!('loading' in HTMLImageElement.prototype)) {
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
     const imageObserver = new IntersectionObserver(function(entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const img = entry.target;
           img.src = img.dataset.src || img.src;
-          img.classList.add('loaded');
           imageObserver.unobserve(img);
         }
       });
@@ -346,24 +230,4 @@
     lazyImages.forEach(img => imageObserver.observe(img));
   }
 
-  // ===========================
-  // Add Active State to Current Page in Navigation
-  // ===========================
-  const currentPath = window.location.pathname;
-  const navLinks = document.querySelectorAll('.nav-menu a, .mobile-nav-list a');
-
-  navLinks.forEach(link => {
-    if (link.getAttribute('href') === currentPath ||
-        currentPath.includes(link.getAttribute('href')) && link.getAttribute('href') !== '/') {
-      link.style.color = '#8B9F7A';
-      link.style.fontWeight = '700';
-    }
-  });
-
-  // ===========================
-  // Initialize on Page Load
-  // ===========================
-  console.log('Wedding website loaded successfully! 🌿💒');
-
 })();
-

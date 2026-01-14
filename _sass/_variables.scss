@@ -8,9 +8,6 @@ $white: #FFFFFF;
 $off-white: #FDFDF8;
 $cream: #F9F9F4;
 
-$earth-tan: #D4C5B0;
-$earth-light: #E8DCC4;
-
 $text-dark: #2C3A2B;
 $text-medium: #4A5D4A;
 $text-light: #6B7C69;
@@ -21,44 +18,35 @@ $font-body: 'Lora', 'Georgia', serif;
 $font-sans: 'Montserrat', 'Helvetica', sans-serif;
 $font-script: 'Great Vibes', cursive;
 
+// Mobile-first font sizes (base for mobile)
 $font-size-base: 16px;
 $font-size-small: 14px;
 $font-size-large: 18px;
-$font-size-h1: 3rem;
-$font-size-h2: 2.5rem;
-$font-size-h3: 2rem;
-$font-size-h4: 1.5rem;
-$font-size-h5: 1.25rem;
-$font-size-h6: 1rem;
 
 // Spacing
 $spacing-xs: 0.5rem;
 $spacing-sm: 1rem;
 $spacing-md: 1.5rem;
-$spacing-lg: 2.5rem;
-$spacing-xl: 4rem;
-$spacing-xxl: 6rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-xxl: 4rem;
 
-// Breakpoints
-$mobile: 320px;
+// Breakpoints (mobile-first: use min-width)
 $tablet: 768px;
 $desktop: 1024px;
-$wide: 1440px;
 
 // Layout
-$max-width: 1200px;
-$container-padding: 20px;
+$max-width: 1000px;
+$container-padding: 1.25rem;
 
 // Effects
 $transition-speed: 0.3s;
 $transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 $box-shadow-light: 0 2px 8px rgba(44, 58, 43, 0.1);
 $box-shadow-medium: 0 4px 16px rgba(44, 58, 43, 0.15);
-$border-radius: 8px;
+$border-radius: 12px;
 
 // Z-index layers
 $z-modal: 1000;
 $z-header: 100;
-$z-dropdown: 50;
 $z-overlay: 900;
-

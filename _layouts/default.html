@@ -4,11 +4,12 @@
 <body>
   {% include header.html %}
 
-  <main id="main-content">
+  <main>
     {{ content }}
   </main>
 
   {% include footer.html %}
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
 </body>
 </html>
-
